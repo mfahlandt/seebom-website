@@ -1,0 +1,22 @@
+<header class="topbar">
+  <div class="content-shell topbar-inner">
+    <a class="brand" href="/" aria-label="Seebom Labs">
+      <img src="/images/logo.svg" alt="Seebom logo">
+      <span>Seebom Labs</span>
+    </a>
+    <nav aria-label="Main">
+      <ul class="menu">
+        {{ range site.Menus.main }}
+          <li>
+            <a href="{{ .URL }}">
+              {{ with .Params.icon }}{{ partial "icon.html" (dict "name" . "class" "icon icon-nav" "label" "") }}{{ end }}
+              <span>{{ .Name }}</span>
+            </a>
+          </li>
+        {{ end }}
+      </ul>
+    </nav>
+  </div>
+</header>
+
+

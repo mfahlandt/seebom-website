@@ -1,0 +1,37 @@
+baseURL = "https://seebom.io/"
+languageCode = "en-us"
+title = "Seebom Labs"
+enableRobotsTXT = true
+disableKinds = ["taxonomy", "term", "rss"]
+
+[params]
+  description = "Dependency intelligence and software supply chain transparency."
+  githubRepo = "https://github.com/seebom-labs/seebom"
+
+[menu]
+  [[menu.main]]
+    name = "Documentation"
+    url = "https://docs.seebom.dev"
+    weight = 10
+    [menu.main.params]
+      icon = "book-open"
+  [[menu.main]]
+    name = "Community"
+    pageRef = "/community"
+    weight = 20
+    [menu.main.params]
+      icon = "users-group"
+  [[menu.main]]
+    name = "Blog"
+    pageRef = "/blog"
+    weight = 30
+    [menu.main.params]
+      icon = "newspaper"
+  [[menu.main]]
+    name = "GitHub"
+    url = "https://github.com/seebom-labs/seebom"
+    weight = 40
+    [menu.main.params]
+      icon = "github"
+
+

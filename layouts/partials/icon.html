@@ -1,0 +1,23 @@
+{{- $name := .name -}}
+{{- $class := default "icon" .class -}}
+{{- $label := .label -}}
+{{- $icons := dict
+  "book-open" "/images/flowbite/book-open.svg"
+  "users-group" "/images/flowbite/users-group.svg"
+  "newspaper" "/images/flowbite/newspaper.svg"
+  "github" "/images/flowbite/github.svg"
+  "arrow-right-to-bracket" "/images/flowbite/arrow-right-to-bracket.svg"
+  "server" "/images/flowbite/server.svg"
+  "shield-check" "/images/flowbite/shield-check.svg"
+  "scale-balanced" "/images/flowbite/scale-balanced.svg"
+  "code-branch" "/images/flowbite/code-branch.svg"
+  "database" "/images/flowbite/database.svg"
+  "rocket" "/images/flowbite/rocket.svg"
+  "folder-open" "/images/flowbite/folder-open.svg"
+-}}
+{{- with index $icons $name -}}
+  <img class="{{ $class }}" src="{{ . }}" alt="{{ $label }}" loading="lazy">
+{{- end -}}
+
+
+

@@ -1,0 +1,74 @@
+{{ define "main" }}
+<section class="hero content-shell">
+  <p class="eyebrow">Open Source Supply Chain Security</p>
+  <h1>Kubernetes-native SBOM analytics for real-world engineering teams.</h1>
+  <p class="lead">
+    Seebom ingests SPDX and OpenVEX data, enriches vulnerabilities via OSV,
+    and gives platform teams a fast ClickHouse-backed view across projects,
+    dependencies, licenses, and remediation priorities.
+  </p>
+  <div class="cta-row">
+    <a class="btn btn-primary" href="{{ .Site.Params.githubRepo }}">
+      {{ partial "icon.html" (dict "name" "github" "class" "icon icon-btn" "label" "") }}
+      <span>View on GitHub</span>
+    </a>
+    <a class="btn btn-muted" href="https://docs.seebom.dev">
+      {{ partial "icon.html" (dict "name" "book-open" "class" "icon icon-btn" "label" "") }}
+      <span>Read documentation</span>
+    </a>
+  </div>
+</section>
+
+<section class="content-shell feature-block">
+  <div class="card-grid">
+    <article class="card">
+      <h2>
+        {{ partial "icon.html" (dict "name" "folder-open" "class" "icon icon-heading" "label" "") }}
+        <span>Ingestion and Processing</span>
+      </h2>
+      <p>Watcher and worker binaries process SBOM and VEX jobs with hash deduplication and queue-based scaling.</p>
+    </article>
+    <article class="card">
+      <h2>
+        {{ partial "icon.html" (dict "name" "shield-check" "class" "icon icon-heading" "label" "") }}
+        <span>Vulnerability Intelligence</span>
+      </h2>
+      <p>OSV batch lookups plus CVE refresher jobs continuously map newly disclosed CVEs back to affected projects.</p>
+    </article>
+    <article class="card">
+      <h2>
+        {{ partial "icon.html" (dict "name" "scale-balanced" "class" "icon icon-heading" "label" "") }}
+        <span>License Governance</span>
+      </h2>
+      <p>Externalized policy and exception files separate permissive, copyleft, and unknown licenses without rebuilds.</p>
+    </article>
+  </div>
+</section>
+
+<section class="content-shell feature-block">
+  <div class="card-grid">
+    <article class="card">
+      <h2>
+        {{ partial "icon.html" (dict "name" "code-branch" "class" "icon icon-heading" "label" "") }}
+        <span>API and UI</span>
+      </h2>
+      <p>REST endpoints power a modern Angular interface with search, virtual scrolling, and configurable theming.</p>
+    </article>
+    <article class="card">
+      <h2>
+        {{ partial "icon.html" (dict "name" "database" "class" "icon icon-heading" "label" "") }}
+        <span>Data Platform</span>
+      </h2>
+      <p>MergeTree tables and materialized views in ClickHouse enable fast cross-project queries on PURLs and CVEs.</p>
+    </article>
+    <article class="card">
+      <h2>
+        {{ partial "icon.html" (dict "name" "rocket" "class" "icon icon-heading" "label" "") }}
+        <span>Deployment</span>
+      </h2>
+      <p>Run locally with Docker Compose or in Kubernetes with Helm templates for API, workers, UI, and CronJobs.</p>
+    </article>
+  </div>
+</section>
+{{ end }}
+
