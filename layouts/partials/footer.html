@@ -1,0 +1,77 @@
+<footer class="footer">
+  <div class="content-shell footer-top">
+    <div class="footer-brand">
+      <a href="https://openssf.org" rel="noopener" class="footer-sandbox" aria-label="OpenSSF Sandbox Project">
+        <img src="/images/openssf-sandbox.png" alt="OpenSSF Sandbox Project" class="footer-sandbox-logo">
+      </a>
+      <p>We are an <a href="https://openssf.org">OpenSSF</a> sandbox project. BOMHort (formerly SeeBOM) delivers Kubernetes-native SBOM management and software supply chain security.</p>
+      <div class="footer-social">
+        <p class="footer-social-label">Find us on</p>
+        <div class="footer-social-links">
+          <a href="https://www.linkedin.com/company/bomhort" rel="noopener" aria-label="BOMHort on LinkedIn">
+            {{ partial "icon.html" (dict "name" "linkedin" "class" "icon icon-social" "label" "LinkedIn") }}
+          </a>
+          <a href="{{ .Site.Params.githubRepo }}" rel="noopener" aria-label="BOMHort on GitHub">
+            {{ partial "icon.html" (dict "name" "github" "class" "icon icon-social" "label" "GitHub") }}
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <nav class="footer-cols" aria-label="Footer">
+      <div class="footer-col">
+        <h3>Community</h3>
+        <ul>
+          <li><a href="{{ .Site.Params.githubRepo }}">GitHub</a></li>
+          <li><a href="https://www.linkedin.com/company/bomhort">LinkedIn</a></li>
+          <li><a href="/community/">Community</a></li>
+          <li><a href="/blog/">Blog</a></li>
+          <li><a href="/blog/index.xml">RSS Feed</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3>Developer Resources</h3>
+        <ul>
+          <li><a href="https://docs.bomhort.dev/docs/getting-started/">Getting Started</a></li>
+          <li><a href="https://docs.bomhort.dev/docs/architecture/">Architecture</a></li>
+          <li><a href="https://docs.bomhort.dev/docs/api-reference/">API Reference</a></li>
+          <li><a href="https://docs.bomhort.dev/docs/roadmap/">Roadmap</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3>Helpful Links</h3>
+        <ul>
+          <li><a href="https://docs.bomhort.dev/">Documentation</a></li>
+          <li><a href="https://docs.bomhort.dev/docs/development/contributor-ladder/">Contributor Ladder</a></li>
+          <li><a href="https://docs.bomhort.dev/docs/development/ai-policy/">AI Usage Policy</a></li>
+          <li><a href="/styleguide/">Brand &amp; Styleguide</a></li>
+          <li><a href="{{ .Site.Params.githubRepo }}">Project Source</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3>Policies</h3>
+        <ul>
+          <li><a href="{{ .Site.Params.githubRepo }}/security/policy">Report a Vulnerability</a></li>
+          <li><a href="{{ .Site.Params.githubRepo }}/blob/main/CODE_OF_CONDUCT.md">Code of Conduct</a></li>
+          <li><a href="{{ .Site.Params.githubRepo }}/blob/main/LICENSE">License (Apache-2.0)</a></li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+
+  <div class="content-shell footer-bottom">
+    <p>&copy; 2026. The BOMHort Authors. Licensed under Apache-2.0.</p>
+    <p class="footer-note">OpenSSF and the OpenSSF logo are trademarks of The Linux Foundation&reg;. Kubernetes and the Kubernetes logo are registered trademarks of The Linux Foundation&reg;. This site uses Flowbite Icons (MIT License).</p>
+  </div>
+</footer>
+
+
+
+
+
+
+
+
+
+
+

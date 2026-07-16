@@ -1,0 +1,12 @@
+{{- $name := .name -}}
+{{- $hex := .hex -}}
+{{- $var := .var -}}
+<div class="sg-swatch">
+  <span class="sg-swatch-color" style="background: {{ $hex }};"></span>
+  <span class="sg-swatch-meta">
+    <span class="sg-swatch-name">{{ $name }}</span>
+    <code class="sg-swatch-hex">{{ $hex }}</code>
+    {{ with $var }}<code class="sg-swatch-var">{{ . }}</code>{{ end }}
+  </span>
+</div>
+

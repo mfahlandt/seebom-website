@@ -1,0 +1,167 @@
+{{ define "main" }}
+<section class="content-shell sg-intro">
+  <p class="eyebrow">Brand &amp; Design</p>
+  <h1>BOMHort Styleguide</h1>
+  <p class="lead">
+    The visual language of BOMHort — logo, colors, typography, and components.
+    Use these tokens and assets to keep the brand consistent across the website,
+    docs, product UI, and community materials.
+  </p>
+</section>
+
+{{/* --- LOGO --- */}}
+<section class="content-shell sg-section">
+  <h2>Logo &amp; Mascot</h2>
+  <p class="sg-note">Meet the BOMHort dragon — a friendly guardian hoarding a stack of SBOM documents. Always keep clear space around it and never distort, recolor, or add effects.</p>
+  <div class="sg-logo-grid">
+    <div class="sg-logo-card sg-on-dark">
+      <img src="/images/bomhort-mascot.png" alt="BOMHort mascot on dark" class="sg-logo">
+      <span class="sg-caption">On dark background</span>
+    </div>
+    <div class="sg-logo-card sg-on-light">
+      <img src="/images/bomhort-mascot.png" alt="BOMHort mascot on light" class="sg-logo">
+      <span class="sg-caption sg-caption-dark">On light background</span>
+    </div>
+    <div class="sg-logo-card sg-on-dark">
+      <span class="sg-lockup">
+        <img src="/images/bomhort-mascot.png" alt="BOMHort logo" class="sg-logo sg-logo-sm">
+        <span class="sg-wordmark">BOMHort</span>
+      </span>
+      <span class="sg-caption">Horizontal lockup (mascot + wordmark)</span>
+    </div>
+  </div>
+  <ul class="sg-do-dont">
+    <li class="sg-do"><strong>Do</strong> use the transparent PNG on any background.</li>
+    <li class="sg-do"><strong>Do</strong> pair the mascot with the “BOMHort” wordmark in navigation and headers.</li>
+    <li class="sg-dont"><strong>Don't</strong> stretch, rotate, recolor, or add shadows to the mascot.</li>
+  </ul>
+</section>
+
+{{/* --- COLORS --- */}}
+<div class="band band-surface">
+  <section class="content-shell sg-section">
+    <h2>Color Palette</h2>
+    <p class="sg-note">BOMHort ships a dark-first theme. Accents provide emphasis; keep large surfaces neutral.</p>
+
+    <h3 class="sg-subhead">Brand Reds — from the mascot</h3>
+    <p class="sg-note">The two red tones extracted from the BOMHort dragon: a light crimson body and a deep maroon for shading.</p>
+    <div class="sg-swatches">
+      {{ partial "sg-swatch" (dict "name" "Brand Red (light)" "hex" "#B21B34" "var" "--brand-red") }}
+      {{ partial "sg-swatch" (dict "name" "Brand Red (dark)" "hex" "#6E0604" "var" "--brand-red-dark") }}
+    </div>
+
+    <h3 class="sg-subhead">Accents</h3>
+    <div class="sg-swatches">
+      {{ partial "sg-swatch" (dict "name" "Teal (primary accent)" "hex" "#1A8A8A" "var" "--accent") }}
+      {{ partial "sg-swatch" (dict "name" "Teal hover" "hex" "#147272" "var" "--accent-hover") }}
+      {{ partial "sg-swatch" (dict "name" "Orange (secondary)" "hex" "#E8871E" "var" "--accent-orange") }}
+      {{ partial "sg-swatch" (dict "name" "Orange hover" "hex" "#D07518" "var" "--accent-orange-hover") }}
+    </div>
+
+    <h3 class="sg-subhead">Surfaces</h3>
+    <div class="sg-swatches">
+      {{ partial "sg-swatch" (dict "name" "Background" "hex" "#121218" "var" "--bg") }}
+      {{ partial "sg-swatch" (dict "name" "Surface" "hex" "#1C1C24" "var" "--surface") }}
+      {{ partial "sg-swatch" (dict "name" "Surface alt" "hex" "#24242E" "var" "--surface-alt") }}
+      {{ partial "sg-swatch" (dict "name" "Border" "hex" "#2E2E38" "var" "--border") }}
+    </div>
+
+    <h3 class="sg-subhead">Text</h3>
+    <div class="sg-swatches">
+      {{ partial "sg-swatch" (dict "name" "Heading" "hex" "#F5F5FA" "var" "--heading") }}
+      {{ partial "sg-swatch" (dict "name" "Body" "hex" "#E0E0E6" "var" "--text") }}
+      {{ partial "sg-swatch" (dict "name" "Secondary" "hex" "#A9A9BD" "var" "--text-secondary") }}
+      {{ partial "sg-swatch" (dict "name" "Muted" "hex" "#8B8B9E" "var" "--text-muted") }}
+    </div>
+  </section>
+</div>
+
+{{/* --- TYPOGRAPHY --- */}}
+<section class="content-shell sg-section">
+  <h2>Typography</h2>
+  <p class="sg-note">Typeface: <strong>Inter</strong>, with a system-font fallback stack. Headings are tight and bold; body copy is comfortable at 1.6 line-height.</p>
+  <div class="sg-type">
+    <p class="eyebrow">Eyebrow · uppercase label</p>
+    <h1 class="sg-type-sample">Heading 1 — clamp(2rem, 4vw, 3.4rem)</h1>
+    <h2 class="sg-type-sample">Heading 2 — section title</h2>
+    <h3 class="sg-type-sample">Heading 3 — subsection</h3>
+    <p class="lead">Lead paragraph — used for intros and hero copy at a slightly larger size.</p>
+    <p>Body text — the default paragraph style for descriptions and long-form content across the site.</p>
+    <p class="sg-muted-sample">Muted text — captions, footnotes, and metadata.</p>
+  </div>
+</section>
+
+{{/* --- BUTTONS --- */}}
+<div class="band band-surface">
+  <section class="content-shell sg-section">
+    <h2>Buttons</h2>
+    <p class="sg-note">Primary for the main action, muted for secondary actions.</p>
+    <div class="cta-row">
+      <a class="btn btn-primary" href="#">
+        {{ partial "icon.html" (dict "name" "github" "class" "icon icon-btn" "label" "") }}
+        <span>Primary button</span>
+      </a>
+      <a class="btn btn-muted" href="#">
+        {{ partial "icon.html" (dict "name" "book-open" "class" "icon icon-btn" "label" "") }}
+        <span>Muted button</span>
+      </a>
+    </div>
+    <h3 class="sg-subhead">Pills &amp; Badges</h3>
+    <div class="badge-row">
+      <span class="pill">
+        <img class="pill-logo" src="/images/openssf-icon.svg" alt="OpenSSF logo" width="16" height="16">
+        <span>OpenSSF Sandbox Project</span>
+      </span>
+    </div>
+  </section>
+</div>
+
+{{/* --- ICONS --- */}}
+<section class="content-shell sg-section">
+  <h2>Iconography</h2>
+  <p class="sg-note">Icons are <a href="https://flowbite.com/icons/">Flowbite Icons</a> (MIT), rendered as CSS masks so they inherit color. Headline icons use the orange accent.</p>
+  <div class="sg-icons">
+    {{ range slice "folder-open" "shield-check" "scale-balanced" "code-branch" "database" "rocket" "book-open" "users-group" "newspaper" "github" "linkedin" "server" }}
+      <div class="sg-icon-cell">
+        {{ partial "icon.html" (dict "name" . "class" "icon icon-heading" "label" .) }}
+        <span class="sg-caption">{{ . }}</span>
+      </div>
+    {{ end }}
+  </div>
+</section>
+
+{{/* --- COMPONENTS --- */}}
+<div class="band band-surface">
+  <section class="content-shell sg-section">
+    <h2>Cards</h2>
+    <div class="card-grid">
+      <article class="card">
+        <h2>
+          {{ partial "icon.html" (dict "name" "shield-check" "class" "icon icon-heading" "label" "") }}
+          <span>Card title</span>
+        </h2>
+        <p>Cards use a subtle gradient surface with an orange-tinted border for grouped content and features.</p>
+      </article>
+      <article class="card">
+        <h2>
+          {{ partial "icon.html" (dict "name" "database" "class" "icon icon-heading" "label" "") }}
+          <span>Another card</span>
+        </h2>
+        <p>Keep card copy concise. One idea per card works best for scannability.</p>
+      </article>
+    </div>
+  </section>
+</div>
+
+{{/* --- ACCENT BAND SAMPLE --- */}}
+<div class="band band-accent">
+  <section class="content-shell sg-section">
+    <h2>Accent Band</h2>
+    <p class="sg-note">Used sparingly to highlight community and call-to-action sections. Combines a teal glow with a soft orange counter-light.</p>
+  </section>
+</div>
+{{ end }}
+
+
+
+
