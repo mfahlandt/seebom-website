@@ -1,30 +1,41 @@
 # bomhort-website
 
-Hugo-basierte Website fuer **BOMHort** (ehemals SeeBOM), das Kubernetes-native SBOM Visualisierungs- und Governance-Projekt.
+Hugo-based website for **BOMHort** (formerly SeeBOM), the Kubernetes-native SBOM
+visualization and governance project.
 
-## Struktur
+## Structure
 
-- `hugo.toml`: Site-Konfiguration und Hauptnavigation
-- `layouts/`: Templates fuer Home, Listen- und Content-Seiten
-- `content/`: Inhaltsseiten (`Documentation`, `Community`, `Blog`)
-- `static/css/main.css`: Dark-Mode Design-Tokens und Layout-Styling
-- `static/images/logo.svg`: Markenlogo
-- `layouts/partials/icon.html`: Flowbite-Icons (MIT), lokal eingebunden aus `static/images/flowbite/`
+- `hugo.toml`: site configuration and main navigation
+- `layouts/`: templates for the home, list, and content pages
+- `content/`: content pages (`Documentation`, `Community`, `Blog`, `Styleguide`)
+- `static/css/main.css`: dark-mode design tokens and layout styling
+- `static/images/`: brand assets, mascot, and logos
+- `layouts/partials/icon.html`: Flowbite Icons (MIT), bundled locally from `static/images/flowbite/`
 
-## Lokal starten
+## Run locally
 
 ```bash
 hugo server -D
 ```
 
-## Produktion bauen
+## Build for production
 
 ```bash
 hugo
 ```
 
-Das Build-Ergebnis liegt in `public/`.
+The build output is written to `public/`.
 
-Weitere Projektdokumentation: `https://docs.bomhort.dev`.
-Projekt-Repository: `https://github.com/seebom-labs/BOMHort`.
+## Deployment (GitHub Pages)
+
+The site is deployed to GitHub Pages automatically via GitHub Actions
+(`.github/workflows/hugo.yml`). Every push to `main` builds the site with Hugo
+(`--gc --minify`) and publishes it.
+
+One-time repository setup: **Settings → Pages → Build and deployment →
+Source: GitHub Actions**. The custom domain `bomhort.dev` is set via
+`static/CNAME` (DNS must point to GitHub Pages).
+
+More project documentation: `https://docs.bomhort.dev`.
+Project repository: `https://github.com/seebom-labs/BOMHort`.
 
