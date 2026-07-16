@@ -25,6 +25,16 @@ hugo
 
 Das Build-Ergebnis liegt in `public/`.
 
+## Deployment (GitHub Pages)
+
+Die Seite wird via GitHub Actions automatisch auf GitHub Pages deployed
+(`.github/workflows/hugo.yml`). Jeder Push auf `main` baut die Seite mit Hugo
+(`--gc --minify`) und veröffentlicht sie.
+
+Einmalige Einrichtung im Repo: **Settings → Pages → Build and deployment →
+Source: GitHub Actions**. Die Custom Domain `bomhort.dev` wird über
+`static/CNAME` gesetzt (DNS muss auf GitHub Pages zeigen).
+
 Weitere Projektdokumentation: `https://docs.bomhort.dev`.
 Projekt-Repository: `https://github.com/seebom-labs/BOMHort`.
 
