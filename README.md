@@ -1,6 +1,6 @@
-# seebom-website
+# bomhort-website
 
-Hugo-basierte Website fuer Seebom Labs, visuell an `kcp.io` orientiert und mit Dark-Mode-Farbwerten aus `seebom/ui/src/styles.scss`.
+Hugo-basierte Website fuer **BOMHort** (ehemals SeeBOM), das Kubernetes-native SBOM Visualisierungs- und Governance-Projekt.
 
 ## Struktur
 
@@ -8,7 +8,7 @@ Hugo-basierte Website fuer Seebom Labs, visuell an `kcp.io` orientiert und mit D
 - `layouts/`: Templates fuer Home, Listen- und Content-Seiten
 - `content/`: Inhaltsseiten (`Documentation`, `Community`, `Blog`)
 - `static/css/main.css`: Dark-Mode Design-Tokens und Layout-Styling
-- `static/images/logo.svg`: Einfaches Markenlogo
+- `static/images/logo.svg`: Markenlogo
 - `layouts/partials/icon.html`: Flowbite-Icons (MIT), lokal eingebunden aus `static/images/flowbite/`
 
 ## Lokal starten
@@ -25,5 +25,6 @@ hugo
 
 Das Build-Ergebnis liegt in `public/`.
 
-Weitere Projektdokumentation: `https://docs.seebom.dev`.
+Weitere Projektdokumentation: `https://docs.bomhort.dev`.
+Projekt-Repository: `https://github.com/seebom-labs/BOMHort`.
 

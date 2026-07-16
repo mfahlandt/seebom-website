@@ -1,17 +1,21 @@
-baseURL = "https://seebom.io/"
+baseURL = "https://bomhort.dev/"
 languageCode = "en-us"
-title = "Seebom Labs"
+title = "BOMHort"
 enableRobotsTXT = true
-disableKinds = ["taxonomy", "term", "rss"]
+disableKinds = ["taxonomy", "term"]
 
 [params]
-  description = "Dependency intelligence and software supply chain transparency."
-  githubRepo = "https://github.com/seebom-labs/seebom"
+  description = "Open source, Kubernetes-native SBOM management & software supply chain security: ingest SPDX/CycloneDX SBOMs, scan vulnerabilities, enforce licenses, CRA readiness."
+  keywords = "SBOM management, Software Bill of Materials, Cyber Resilience Act, CRA compliance, vulnerability check, vulnerability scanning, OSV, CycloneDX, SPDX, VEX, OpenVEX, software supply chain security, license compliance, dependency management, Kubernetes security, SBOM analytics, open source security, OpenSSF, CVE tracking"
+  githubRepo = "https://github.com/seebom-labs/BOMHort"
+  author = "BOMHort Community"
+  ogImage = "/images/bomhort-mascot-favicon.png"
+  twitter = ""
 
 [menu]
   [[menu.main]]
     name = "Documentation"
-    url = "https://docs.seebom.dev"
+    url = "https://docs.bomhort.dev"
     weight = 10
     [menu.main.params]
       icon = "book-open"
@@ -29,9 +33,15 @@ disableKinds = ["taxonomy", "term", "rss"]
       icon = "newspaper"
   [[menu.main]]
     name = "GitHub"
-    url = "https://github.com/seebom-labs/seebom"
+    url = "https://github.com/seebom-labs/BOMHort"
     weight = 40
     [menu.main.params]
       icon = "github"
+
+
+
+
+
+
 
 

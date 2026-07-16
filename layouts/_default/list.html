@@ -1,13 +1,24 @@
 {{ define "main" }}
 <section class="content-shell">
-  <h1>{{ .Title }}</h1>
+  <div class="list-head">
+    <h1>{{ .Title }}</h1>
+    {{ with .OutputFormats.Get "rss" }}
+      <a class="rss-link" href="{{ .Permalink }}" aria-label="Subscribe via RSS">
+        {{ partial "icon.html" (dict "name" "newspaper" "class" "icon icon-btn" "label" "") }}
+        <span>RSS Feed</span>
+      </a>
+    {{ end }}
+  </div>
   {{ with .Content }}
     <div class="content-body">{{ . }}</div>
   {{ end }}
   {{ if .Pages }}
-    <div class="card-grid">
+    <div class="card-grid list-cards">
       {{ range .Pages }}
         <article class="card">
+          {{ if not .Date.IsZero }}
+            <p class="card-date"><time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "January 2, 2006" }}</time></p>
+          {{ end }}
           <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
           {{ with .Summary }}<p>{{ . }}</p>{{ end }}
         </article>
@@ -16,4 +27,7 @@
   {{ end }}
 </section>
 {{ end }}
+
+
+
 

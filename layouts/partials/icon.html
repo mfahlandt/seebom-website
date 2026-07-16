@@ -14,9 +14,10 @@
   "database" "/images/flowbite/database.svg"
   "rocket" "/images/flowbite/rocket.svg"
   "folder-open" "/images/flowbite/folder-open.svg"
+  "linkedin" "/images/flowbite/linkedin.svg"
 -}}
 {{- with index $icons $name -}}
-  <img class="{{ $class }}" src="{{ . }}" alt="{{ $label }}" loading="lazy">
+  <span class="{{ $class }} icon-mask" style="-webkit-mask-image:url('{{ . }}');mask-image:url('{{ . }}');"{{ with $label }} role="img" aria-label="{{ . }}"{{ else }} aria-hidden="true"{{ end }}></span>
 {{- end -}}
 
 

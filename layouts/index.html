@@ -1,20 +1,29 @@
 {{ define "main" }}
 <section class="hero content-shell">
-  <p class="eyebrow">Open Source Supply Chain Security</p>
-  <h1>Kubernetes-native SBOM analytics for real-world engineering teams.</h1>
+  <p class="eyebrow">Open Source Software Supply Chain Security</p>
+  <h1>Kubernetes-native SBOM visualization &amp; governance at scale.</h1>
   <p class="lead">
-    Seebom ingests SPDX and OpenVEX data, enriches vulnerabilities via OSV,
-    and gives platform teams a fast ClickHouse-backed view across projects,
-    dependencies, licenses, and remediation priorities.
+    BOMHort ingests 1000+ SPDX and CycloneDX SBOMs, scans for vulnerabilities
+    via OSV, enforces license compliance, and applies VEX statements — all
+    visualized in a fast Angular dashboard backed by ClickHouse analytics.
+  </p>
+  <p class="lead-note">
+    Formerly known as <strong>SeeBOM</strong> — same project, same team, new name.
+  </p>
+  <p class="badge-row">
+    <a class="pill" href="https://openssf.org" rel="noopener">
+      <img class="pill-logo" src="/images/openssf-icon.svg" alt="OpenSSF logo" width="16" height="16">
+      <span>OpenSSF Sandbox Project</span>
+    </a>
   </p>
   <div class="cta-row">
     <a class="btn btn-primary" href="{{ .Site.Params.githubRepo }}">
       {{ partial "icon.html" (dict "name" "github" "class" "icon icon-btn" "label" "") }}
       <span>View on GitHub</span>
     </a>
-    <a class="btn btn-muted" href="https://docs.seebom.dev">
+    <a class="btn btn-muted" href="https://docs.bomhort.dev/docs/getting-started/">
       {{ partial "icon.html" (dict "name" "book-open" "class" "icon icon-btn" "label" "") }}
-      <span>Read documentation</span>
+      <span>Get started</span>
     </a>
   </div>
 </section>
@@ -24,51 +33,103 @@
     <article class="card">
       <h2>
         {{ partial "icon.html" (dict "name" "folder-open" "class" "icon icon-heading" "label" "") }}
-        <span>Ingestion and Processing</span>
+        <span>Ingestion &amp; Processing</span>
       </h2>
-      <p>Watcher and worker binaries process SBOM and VEX jobs with hash deduplication and queue-based scaling.</p>
+      <p>An ingestion watcher and scalable parsing workers process SBOM and VEX jobs with SHA256 deduplication and queue-based scaling. Auto-detects SPDX, CycloneDX, and in-toto attestation envelopes.</p>
     </article>
     <article class="card">
       <h2>
         {{ partial "icon.html" (dict "name" "shield-check" "class" "icon icon-heading" "label" "") }}
         <span>Vulnerability Intelligence</span>
       </h2>
-      <p>OSV batch lookups plus CVE refresher jobs continuously map newly disclosed CVEs back to affected projects.</p>
+      <p>OSV batch lookups plus a daily CVE refresher continuously map newly disclosed CVEs back to affected projects — without re-scanning every SBOM.</p>
     </article>
     <article class="card">
       <h2>
         {{ partial "icon.html" (dict "name" "scale-balanced" "class" "icon icon-heading" "label" "") }}
         <span>License Governance</span>
       </h2>
-      <p>Externalized policy and exception files separate permissive, copyleft, and unknown licenses without rebuilds.</p>
+      <p>Ships with the CNCF Allowed Third-Party License Policy. Externalized policy and exception files classify permissive, copyleft, and unknown licenses without rebuilds.</p>
     </article>
   </div>
 </section>
 
+<div class="band band-surface">
+  <section class="content-shell feature-block">
+    <div class="card-grid">
+      <article class="card">
+        <h2>
+          {{ partial "icon.html" (dict "name" "code-branch" "class" "icon icon-heading" "label" "") }}
+          <span>API &amp; UI</span>
+        </h2>
+        <p>19 stateless REST endpoints power a modern Angular 19 dashboard with global search, virtual scrolling, dark mode, and CSS-variable theming — all configurable without a rebuild.</p>
+      </article>
+      <article class="card">
+        <h2>
+          {{ partial "icon.html" (dict "name" "database" "class" "icon icon-heading" "label" "") }}
+          <span>Data Platform</span>
+        </h2>
+        <p>ClickHouse MergeTree tables and materialized views enable fast cross-project queries on PURLs, CVEs, licenses, and version skew across thousands of SBOMs.</p>
+      </article>
+      <article class="card">
+        <h2>
+          {{ partial "icon.html" (dict "name" "rocket" "class" "icon icon-heading" "label" "") }}
+          <span>Deployment</span>
+        </h2>
+        <p>Run locally with Docker Compose or a Kind cluster, or deploy to production Kubernetes with Helm charts for the API, workers, UI, and CronJobs. S3-native SBOM ingestion by default.</p>
+      </article>
+    </div>
+  </section>
+</div>
+
 <section class="content-shell feature-block">
-  <div class="card-grid">
-    <article class="card">
-      <h2>
-        {{ partial "icon.html" (dict "name" "code-branch" "class" "icon icon-heading" "label" "") }}
-        <span>API and UI</span>
-      </h2>
-      <p>REST endpoints power a modern Angular interface with search, virtual scrolling, and configurable theming.</p>
-    </article>
-    <article class="card">
-      <h2>
-        {{ partial "icon.html" (dict "name" "database" "class" "icon icon-heading" "label" "") }}
-        <span>Data Platform</span>
-      </h2>
-      <p>MergeTree tables and materialized views in ClickHouse enable fast cross-project queries on PURLs and CVEs.</p>
-    </article>
-    <article class="card">
-      <h2>
-        {{ partial "icon.html" (dict "name" "rocket" "class" "icon icon-heading" "label" "") }}
-        <span>Deployment</span>
-      </h2>
-      <p>Run locally with Docker Compose or in Kubernetes with Helm templates for API, workers, UI, and CronJobs.</p>
-    </article>
+  <div class="prose">
+    <h2>Built for SBOM management and Cyber Resilience Act readiness</h2>
+    <p>
+      New regulations like the EU <strong>Cyber Resilience Act (CRA)</strong> and
+      frameworks such as NIST SSDF and Executive Order 14028 make a Software Bill of
+      Materials (SBOM) mandatory for products with digital elements. BOMHort gives
+      security, compliance, and platform teams a single place to <strong>manage SBOMs at
+      scale</strong>, run continuous <strong>vulnerability checks</strong>, and prove
+      license and supply chain governance.
+    </p>
+    <ul>
+      <li><strong>SBOM management:</strong> ingest and normalize thousands of SPDX and CycloneDX SBOMs from files or S3, deduplicated by hash.</li>
+      <li><strong>Vulnerability check:</strong> continuous OSV-backed CVE scanning with a daily refresher and VEX-aware effective/suppressed status.</li>
+      <li><strong>License compliance:</strong> CNCF-based permissive/copyleft classification with exception handling.</li>
+      <li><strong>CRA &amp; audit readiness:</strong> transparent, queryable evidence of software composition and remediation across all projects.</li>
+    </ul>
   </div>
 </section>
+
+<div class="band band-accent">
+  <section class="content-shell community-cta">
+    <div class="community-inner">
+      <p class="eyebrow">We &#10084;&#65039; Collaboration</p>
+      <h2>Built in the open, together.</h2>
+      <p class="lead">
+        BOMHort is developed completely in the open as an OpenSSF Sandbox Project.
+        Everybody is welcome to help make the vision of transparent software supply
+        chains reality — from filing issues to shipping features.
+      </p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="{{ .Site.Params.githubRepo }}">
+          {{ partial "icon.html" (dict "name" "github" "class" "icon icon-btn" "label" "") }}
+          <span>Contribute on GitHub</span>
+        </a>
+        <a class="btn btn-muted" href="https://docs.bomhort.dev/docs/development/contributor-ladder/">
+          {{ partial "icon.html" (dict "name" "users-group" "class" "icon icon-btn" "label" "") }}
+          <span>Contributor Ladder</span>
+        </a>
+      </div>
+      <div class="contributors">
+        <p class="contributors-label">Our contributors</p>
+        <a href="{{ .Site.Params.githubRepo }}/graphs/contributors" rel="noopener" aria-label="BOMHort contributors on GitHub">
+          <img src="https://contrib.rocks/image?repo=seebom-labs/BOMHort" alt="BOMHort contributors" loading="lazy">
+        </a>
+      </div>
+    </div>
+  </section>
+</div>
 {{ end }}
 
